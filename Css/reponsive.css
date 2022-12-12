@@ -1,0 +1,36 @@
+@media screen and (max-width: 960px) {
+    article>.product>.item {
+        width: calc((100% - 30px)/3);
+    }
+    article>.product>.item:last-child {
+        display: none;
+    }
+    footer>.row {
+        flex-direction: column;
+    }
+    footer>.row>div {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .footer_menu {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    footer>.row>div {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    article>.product>.item {
+        width: calc((100% - 15px)/2);
+    }
+    article>.product>.item:last-child {
+        display: block;
+    }
+    footer>.row>div {
+        width: 100%;
+    }
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huỳnh Tân Store | Chuyên các loại phụ kiện điện thoại</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/logo01.png">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/reponsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <div id="dangnhap">
+        <form id="form">
+            <a id="dongdangnhap" class="fa-solid fa-xmark" onclick="dongdangnhap()"></a>
+            <label for="formname" id="formname">Đăng nhập</label>
+            <div class="login">
+                <label for="username">Tên đăng nhập:</label>
+                <div>
+                    <input type="text" onblur="checkusername()" name="username" id="username">
+                    <div class="showerror" id="checkusername"></div>
+                </div>
+            </div>
+            <div class="login">
+                <label for="password">Mật khẩu:</label>
+                <div>
+                    <input type="password" onblur="checkpassword()" name="password" id="password">
+                    <div class="showerror" id="checkpassword"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="repassword">Nhập lại mật khẩu:</label>
+                <div>
+                    <input type="password" onblur="checkrepassword()" name="repassword" id="repassword">
+                    <div class="showerror" id="checkrepassword"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="fullname">Họ và tên:</label>
+                <div>
+                    <input type="text" onblur="checkfullname()" name="fullname" id="fullname">
+                    <div class="showerror" id="checkfullname"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="sex">Giới tính:</label>
+                <div class="sex">
+                    <input type="radio" name="sex" id="male" checked>
+                    <label for="male">Nam</label>
+                    <input type="radio" name="sex" id="female">
+                    <label for="male">Nữ</label>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="email">E-mail:</label>
+                <div>
+                    <input type="text" onblur="checkemail()" name="email" id="email">
+                    <div class="showerror" id="checkemail"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="phone">Số điện thoại:</label>
+                <div>
+                    <input type="text" onblur="checkphone()" name="phone" id="phone">
+                    <div class="showerror" id="checkphone"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="address">Địa chỉ:</label>
+                <div>
+                    <input type="text" onblur="checkaddress()" name="address" id="address">
+                    <div class="showerror" id="checkaddress"></div>
+                </div>
+            </div>
+            <div id="dieukhoan" class="dieukhoan">
+                <label for="dieukhoan">Bằng cách nhấp vào nút "Đăng ký", bạn đang tạo một tài khoản và đồng ý với <a
+                        href="">Điều
+                        khoản dịch vụ</a> và <a href="">Chính sách bảo mật</a> của <strong>Huỳnh Tân
+                        Store</strong></label>
+            </div>
+            <input type="button" value="Đăng nhập" onclick="checklogin()" id="login">
+            <label for="forgotpassword" id="forgotpassword"><a href="">Quên mật khẩu</a></label><br>
+            <label for="acc" id="acc">Bạn chưa có tài khoản?</label><a onclick="signup()" id="clickacc">Đăng ký
+                ngay</a>
+        </form>
+    </div>
+    <div class="container">
+        <header>
+            <a class="logo" href="index.html">
+                <img src="img/logo/logo.png" alt="Logo">
+            </a>
+        </header>
+        <nav class="main-menu">
+            <ul>
+                <li class="active"><a href="index.html"><i class="fa-solid fa-house-chimney"></i></a></li>
+                <li><a href="oplung.html">Ốp lưng điện thoại</a></li>
+                <li><a href="miengdanmanhinh.html">Miếng dán màn hình</a></li>
+                <li><a href="">Sạc - Cáp</a></li>
+                <li><a href="">Tai nghe</a></li>
+                <li><a href="">Phụ kiện khác</a></li>
+            </ul>
+            <div class="tools">
+                <div class="search">
+                    <input type="search" name="search" id="search" placeholder="Tìm kiếm..." required>
+                    <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div id="showsearch">
+                        <div id="viewsearch"></div>
+                        <button onclick="dong()">X</button>
+                    </div>
+                </div>
+                <a class="login" onclick="dongdangnhap()"><i class="fa-solid fa-user"></i></a>
+                <a class="cart-shopping" onclick="showcart();">
+                    <i class="fa-solid fa-cart-shopping"><span id="countcart">0</span></i>
+                </a>
+                <table class="cartlist">
+                    <tr>
+                        <th class="stt">STT</th>
+                        <th class="imgcart">Hình ảnh</th>
+                        <th class="namecart">Tên</th>
+                        <th class="pricecart">Giá</th>
+                        <th class="countcart">Số lượng</th>
+                        <th class="sumcart">Thành tiền</th>
+                        <th class="deletecart">Xóa</th>
+                    </tr>
+                    <tbody id="cartlist"></tbody>
+                    <tr>
+                        <td class="thanhtoan" colspan="7">
+                            <button id="thanhtoan" onclick="thanhtoan()">Thanh toán</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <a href=""><img class="slides fade" src="img/slides/slides_1.webp" alt=""></a>
+                <a href=""><img class="slides fade" src="img/slides/slides_2.webp" alt=""></a>
+                <a href=""><img class="slides fade" src="img/slides/slides_3.webp" alt=""></a>
+                <a href=""><img class="slides fade" src="img/slides/slides_4.webp" alt=""></a>
+                <a href=""><img class="slides fade" src="img/slides/slides_5.webp" alt=""></a>
+                <a class="prev" onclick="plusSlides(-1)" title="Prev">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)" title="Next">&#10095;</a>
+            </div>
+            <div>
+                <span class="dot" onclick="currentSlides(1)"></span>
+                <span class="dot" onclick="currentSlides(2)"></span>
+                <span class="dot" onclick="currentSlides(3)"></span>
+                <span class="dot" onclick="currentSlides(4)"></span>
+                <span class="dot" onclick="currentSlides(5)"></span>
+            </div>
+        </div>
+        <section>
+            <div class="name">
+                <span>Ốp chống sốc Ringke Fusion</span>
+                <a href="oplung.html">Xem thêm</a>
+            </div>
+            <div class="product">
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_iphone14promax.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - IPhone 14 Pro Max</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_iphone14.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - IPhone 14</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_samsungs22ultra.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - Samsung S22 Ultra</p>
+                    <p class="product-price">300000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_pixel7pro.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - Google Pixel 7 pro</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="name">
+                <span>Miếng dán màn hình</span>
+                <a href="miengdanmanhinh.html">Xem thêm</a>
+            </div>
+            <div class="product">
+                <div class="item">
+                    <a href=""><img src="img/product/miengdanmanhinh/Gor_iphone14promax.webp" alt=""></a>
+                    <p class="product-name">Kính cường lực GOR - IPhone 14 Pro Max</p>
+                    <p class="product-price">80000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/miengdanmanhinh/Gor_SamsungZFold4.webp" alt=""></a>
+                    <p class="product-name">Kính cường lực GOR - Samsung Z-Fold 4</p>
+                    <p class="product-price">70000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/miengdanmanhinh/Gor_watch3.webp" alt=""></a>
+                    <p class="product-name">Kính cường lực GOR - Samsung Watch 3</p>
+                    <p class="product-price">70000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/miengdanmanhinh/UV_pixel7pro.webp" alt=""></a>
+                    <p class="product-name">Kính cường lực UV T-MAX - Pixel 7 Pro</p>
+                    <p class="product-price">250000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+            </div>
+        </section>
+        <article>
+            <h1>Giao hàng hỏa tốc nội thành TP. Hồ Chí Minh trong 2h</h1>
+        </article>
+        <footer>
+            <div class="row">
+                <div>
+                    <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                    <div class="address">
+                        <span><strong>Hotline: </strong>0934 456 443</span>
+                        <span><strong>Mở cửa: </strong>9h - 20h (kể cả thứ 7,CN & ngày lễ)</span>
+                    </div>
+                    <div class="map">
+                        <div>
+                            <span><strong>CN1: </strong>39 Đặng Tất, P.Tân Định, Q.1, TP.HCM</span>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.244246418193!2d106.68573311458937!3d10.792595992310565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d27fca4a9f%3A0xad0d44deef8f570a!2zMzkgxJDhurduZyBU4bqldCwgVMOibiDEkOG7i25oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1668338543798!5m2!1svi!2sus"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div>
+                            <span><strong>CN2: </strong>107/22 Đường 3/2, P.11, Q.10, TP.HCM</span>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62712.05907392943!2d106.677133!3d10.772681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xffa72f77dcd31f91!2zSHXhu7NuaCBUw6JuIFN0b3JlIDI!5e0!3m2!1svi!2sus!4v1668332268821!5m2!1svi!2sus"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_menu">
+                        <div>
+                            <h3>Hướng dẫn</h3>
+                            <a href="">Dán cường lực UV T-Max</a>
+                            <a href="">Dán cường lực GOR</a>
+                            <a href="">Dán Skin 3M</a>
+                            <a href="">Dán Skin PPF</a>
+                            <a href="">Dán cường lực CAMERA</a>
+                            <a href="">Dán đồng hồ</a>
+                            <a href="">Dán carbon</a>
+                            <a href="">Quét keo chống hở mép</a>
+                            <a href="">Dán dẻo GOR</a>
+                        </div>
+                        <div>
+                            <h3>Chính sách</h3>
+                            <a href="">Mua ngay hàng</a>
+                            <a href="">Thanh toán</a>
+                            <a href="">Bảo hành</a>
+                        </div>
+                        <div>
+                            <h3>Về chúng tôi</h3>
+                            <a href="">Facebook</a>
+                            <a href="">Youtube</a>
+                            <a href="">Tiktok</a>
+                        </div>
+                    </div>
+                    <div class="linksan">
+                        <span>Bạn có thể Mua ngay sản phẩm của shop tại:</span>
+                        <div>
+                            <a href="https://shopee.vn/huynhtan.xiaomiking" target="_blank"><img
+                                    src="img/logo/shopee.png" title="Shopee"></a>
+                            <a href="https://www.lazada.vn/shop/huynh-tan-store/?spm=a2o4n.pdp.seller.1.684e5f53DTFydd"
+                                target="_blank"><img src="img/logo/lazada.png" title="Lazada"></a>
+                            <a href="https://www.facebook.com/HUYNHTANSTORE" target="_blank"><img
+                                    src="img/logo/facebook.png" title="Facebook"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2022 Huỳnh Tân Store</p>
+            <a class="backtop" id="backtop" href="#" title="Up to top"><i class="fa-solid fa-arrow-up"></i></a>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/slideshow.js"></script>
+    <script type="text/javascript" src="js/giohang.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script>
+        let mybutton = document.getElementById("backtop");
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huỳnh Tân Store | Chuyên các loại phụ kiện điện thoại</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/logo01.png">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/reponsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a class="logo" href="index.html">
+                <img src="img/logo/logo.png" alt="Logo">
+            </a>
+        </header>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i></a></li>
+                <li class="active"><a href="oplung.html">Ốp lưng điện thoại</a></li>
+                <li><a href="miengdanmanhinh.html">Miếng dán màn hình</a></li>
+                <li><a href="">Sạc - Cáp</a></li>
+                <li><a href="">Tai nghe</a></li>
+                <li><a href="">Phụ kiện khác</a></li>
+            </ul>
+            <div class="tools">
+                <div class="search">
+                    <input type="search" name="search" id="search" placeholder="Tìm kiếm..." required>
+                    <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div id="showsearch">
+                        <div id="viewsearch"></div>
+                        <button onclick="dong()">X</button>
+                    </div>
+                </div>
+                <a class="login" href="login.html"><i class="fa-solid fa-user"></i></a>
+                <a class="cart-shopping" onclick="showcart();">
+                    <i class="fa-solid fa-cart-shopping"><span id="countcart">0</span></i>
+                </a>
+                <table class="cartlist">
+                    <tr>
+                        <th class="stt">STT</th>
+                        <th class="imgcart">Hình ảnh</th>
+                        <th class="namecart">Tên</th>
+                        <th class="pricecart">Giá</th>
+                        <th class="countcart">Số lượng</th>
+                        <th class="sumcart">Thành tiền</th>
+                        <th class="deletecart">Xóa</th>
+                    </tr>
+                    <tbody id="cartlist"></tbody>
+                    <tr>
+                        <td class="thanhtoan" colspan="7"><button id="thanhtoan" onclick="thanhtoan()">Thanh
+                                toán</button></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+        <article>
+            <div class="product">
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_iphone14promax.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - IPhone 14 Pro Max</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_iphone14.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - IPhone 14</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_samsungs22ultra.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - Samsung S22 Ultra</p>
+                    <p class="product-price">300000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/RK_pixel7pro.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Ringke - Google Pixel 7 Pro</p>
+                    <p class="product-price">280000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/XUNDD_PX7Pro.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng XUNDD - Google Pixel 7 Pro</p>
+                    <p class="product-price">130000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/XUNDD_ROG6.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng XUNDD - ROG Phone 6</p>
+                    <p class="product-price">130000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/XUNDD_HW50Pro.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng XUNDD - Huawei Mate 50 Pro </p>
+                    <p class="product-price">130000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/XUNDD_N20U.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng XUNDD - Samsung Note 20 Ultra</p>
+                    <p class="product-price">130000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/WL_RMK50.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng nửa cạnh - Redmi K50 Gaming</p>
+                    <p class="product-price">70000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/WL_IP14PM.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng nửa cạnh - iPhone 14 Pro Max</p>
+                    <p class="product-price">70000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/NC_IP14.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng nửa cạnh - iPhone 14</p>
+                    <p class="product-price">70000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+                <div class="item">
+                    <a href=""><img src="img/product/oplung/WL_S22U.webp" alt=""></a>
+                    <p class="product-name">Ốp lưng Wlons- Samsung S22 Ultra</p>
+                    <p class="product-price">170000</p>
+                    <button id="addcart" onclick="addcart(this);">Mua ngay</button>
+                </div>
+            </div>
+        </article>
+        <article>
+            <h1>Giao hàng hỏa tốc nội thành TP. Hồ Chí Minh trong 2h</h1>
+        </article>
+        <footer>
+            <div class="row">
+                <div>
+                    <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                    <div class="address">
+                        <span><strong>Hotline: </strong>0934 456 443</span>
+                        <span><strong>Mở cửa: </strong>9h - 20h (kể cả thứ 7,CN & ngày lễ)</span>
+                    </div>
+                    <div class="map">
+                        <div>
+                            <span><strong>CN1: </strong>39 Đặng Tất, P.Tân Định, Q.1, TP.HCM</span>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.244246418193!2d106.68573311458937!3d10.792595992310565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d27fca4a9f%3A0xad0d44deef8f570a!2zMzkgxJDhurduZyBU4bqldCwgVMOibiDEkOG7i25oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1668338543798!5m2!1svi!2sus"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div>
+                            <span><strong>CN2: </strong>107/22 Đường 3/2, P.11, Q.10, TP.HCM</span>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62712.05907392943!2d106.677133!3d10.772681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xffa72f77dcd31f91!2zSHXhu7NuaCBUw6JuIFN0b3JlIDI!5e0!3m2!1svi!2sus!4v1668332268821!5m2!1svi!2sus"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_menu">
+                        <div>
+                            <h3>Hướng dẫn</h3>
+                            <a href="">Dán cường lực UV T-Max</a>
+                            <a href="">Dán cường lực GOR</a>
+                            <a href="">Dán Skin 3M</a>
+                            <a href="">Dán Skin PPF</a>
+                            <a href="">Dán cường lực CAMERA</a>
+                            <a href="">Dán đồng hồ</a>
+                            <a href="">Dán carbon</a>
+                            <a href="">Quét keo chống hở mép</a>
+                            <a href="">Dán dẻo GOR</a>
+                        </div>
+                        <div>
+                            <h3>Chính sách</h3>
+                            <a href="">Mua ngay hàng</a>
+                            <a href="">Thanh toán</a>
+                            <a href="">Bảo hành</a>
+                        </div>
+                        <div>
+                            <h3>Về chúng tôi</h3>
+                            <a href="">Facebook</a>
+                            <a href="">Youtube</a>
+                            <a href="">Tiktok</a>
+                        </div>
+                    </div>
+                    <div class="linksan">
+                        <span>Bạn có thể Mua ngay sản phẩm của shop tại:</span>
+                        <div>
+                            <a href="https://shopee.vn/huynhtan.xiaomiking" target="_blank"><img
+                                    src="img/logo/shopee.png" title="Shopee"></a>
+                            <a href="https://www.lazada.vn/shop/huynh-tan-store/?spm=a2o4n.pdp.seller.1.684e5f53DTFydd"
+                                target="_blank"><img src="img/logo/lazada.png" title="Lazada"></a>
+                            <a href="https://www.facebook.com/HUYNHTANSTORE" target="_blank"><img
+                                    src="img/logo/facebook.png" title="Facebook"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2022 Huỳnh Tân Store</p>
+            <a class="backtop" href="#" title="Up to top"><i class="fa-solid fa-arrow-up"></i></a>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/giohang.js"></script>
+</body>
+
+</html>
