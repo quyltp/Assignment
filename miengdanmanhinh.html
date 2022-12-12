@@ -183,6 +183,17 @@
     <script type="text/javascript" src="javascript/search.js"></script>
     <script type="text/javascript" src="javascript/giohang.js"></script>
     <script type="text/javascript" src="javascript/validate.js"></script>
+    <script>
+        let mybutton = document.getElementById("backtop");
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
