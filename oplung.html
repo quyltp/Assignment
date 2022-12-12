@@ -13,6 +13,80 @@
 </head>
 
 <body>
+    <div id="dangnhap">
+        <form id="form">
+            <a id="dongdangnhap" class="fa-solid fa-xmark" onclick="dongdangnhap()"></a>
+            <label for="formname" id="formname">Đăng nhập</label>
+            <div class="login">
+                <label for="username">Tên đăng nhập:</label>
+                <div>
+                    <input type="text" onblur="checkusername()" name="username" id="username">
+                    <div class="showerror" id="checkusername"></div>
+                </div>
+            </div>
+            <div class="login">
+                <label for="password">Mật khẩu:</label>
+                <div>
+                    <input type="password" onblur="checkpassword()" name="password" id="password">
+                    <div class="showerror" id="checkpassword"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="repassword">Nhập lại mật khẩu:</label>
+                <div>
+                    <input type="password" onblur="checkrepassword()" name="repassword" id="repassword">
+                    <div class="showerror" id="checkrepassword"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="fullname">Họ và tên:</label>
+                <div>
+                    <input type="text" onblur="checkfullname()" name="fullname" id="fullname">
+                    <div class="showerror" id="checkfullname"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="sex">Giới tính:</label>
+                <div class="sex">
+                    <input type="radio" name="sex" id="male" checked>
+                    <label for="male">Nam</label>
+                    <input type="radio" name="sex" id="female">
+                    <label for="male">Nữ</label>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="email">E-mail:</label>
+                <div>
+                    <input type="text" onblur="checkemail()" name="email" id="email">
+                    <div class="showerror" id="checkemail"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="phone">Số điện thoại:</label>
+                <div>
+                    <input type="text" onblur="checkphone()" name="phone" id="phone">
+                    <div class="showerror" id="checkphone"></div>
+                </div>
+            </div>
+            <div class="signup">
+                <label for="address">Địa chỉ:</label>
+                <div>
+                    <input type="text" onblur="checkaddress()" name="address" id="address">
+                    <div class="showerror" id="checkaddress"></div>
+                </div>
+            </div>
+            <div id="dieukhoan" class="dieukhoan">
+                <label for="dieukhoan">Bằng cách nhấp vào nút "Đăng ký", bạn đang tạo một tài khoản và đồng ý với <a
+                        href="">Điều
+                        khoản dịch vụ</a> và <a href="">Chính sách bảo mật</a> của <strong>Huỳnh Tân
+                        Store</strong></label>
+            </div>
+            <input type="button" value="Đăng nhập" onclick="checklogin()" id="login">
+            <label for="forgotpassword" id="forgotpassword"><a href="">Quên mật khẩu</a></label><br>
+            <label for="acc" id="acc">Bạn chưa có tài khoản?</label><a onclick="signup()" id="clickacc">Đăng ký
+                ngay</a>
+        </form>
+    </div>
     <div class="container">
         <header>
             <a class="logo" href="index.html">
@@ -21,8 +95,8 @@
         </header>
         <nav class="main-menu">
             <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i></a></li>
-                <li class="active"><a href="oplung.html">Ốp lưng điện thoại</a></li>
+                <li class="active"><a href="index.html"><i class="fa-solid fa-house-chimney"></i></a></li>
+                <li><a href="oplung.html">Ốp lưng điện thoại</a></li>
                 <li><a href="miengdanmanhinh.html">Miếng dán màn hình</a></li>
                 <li><a href="">Sạc - Cáp</a></li>
                 <li><a href="">Tai nghe</a></li>
@@ -37,7 +111,7 @@
                         <button onclick="dong()">X</button>
                     </div>
                 </div>
-                <a class="login" href="login.html"><i class="fa-solid fa-user"></i></a>
+                <a class="login" onclick="dongdangnhap()"><i class="fa-solid fa-user"></i></a>
                 <a class="cart-shopping" onclick="showcart();">
                     <i class="fa-solid fa-cart-shopping"><span id="countcart">0</span></i>
                 </a>
@@ -53,8 +127,9 @@
                     </tr>
                     <tbody id="cartlist"></tbody>
                     <tr>
-                        <td class="thanhtoan" colspan="7"><button id="thanhtoan" onclick="thanhtoan()">Thanh
-                                toán</button></td>
+                        <td class="thanhtoan" colspan="7">
+                            <button id="thanhtoan" onclick="thanhtoan()">Thanh toán</button>
+                        </td>
                     </tr>
                 </table>
             </div>
